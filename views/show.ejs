@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<h1><%=flavor.name%></h1>
+<h3>Pairings</h3>
+<ul>
+    <% for (let i in flavor.pairings) { %>
+        <li>
+            <a href="/flavors/<%=flavor.pairings[i]%>"><%=flavor.pairings[i]%></a>
+        </li>
+    <% } %>
+</ul>
+<%- include('./partials/footer.ejs') %>

@@ -16,10 +16,9 @@ router.get('/new', (req, res) => {
 })
 
 // show
-router.get('/:name', (req, res) => {
-    // const flavor = await Flavor.findById(req.params.id)
-    res.send('Show page generated')
-    // res.render('show.ejs', {flavor})
+router.get('/:name', async (req, res) => {
+    let flavor = await Flavor.find({name: req.params.name})
+    res.render('show.ejs', {flavor})
 })
 
 // create
