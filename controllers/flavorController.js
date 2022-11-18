@@ -17,22 +17,22 @@ router.get('/new', (req, res) => {
 
 // show
 router.get('/:name', async (req, res) => {
-    let flavor = await Flavor.find({name: req.params.name})
+    let flavor = await Flavor.findOne({name: req.params.name})
     res.render('show.ejs', {flavor})
 })
 
 // create
-// router.post('/', (req, res) => {
-    // req.body.pairings = (typeof(req.body.pairings)===Array?req.body.pairings.join(', '):req.body.pairings).split(', ')
-    // Flavor.create(req.body, (err, flavor) => {
-    //     if (err) {
-    //         console.log(`error ${err}`)
-    //         res.send(err)
-    //     } else {
-    //         res.redirect('/flavors')
-    //     }
-    // })
-// })
+router.post('/', (req, res) => {
+    req.body.pairings = (typeof(req.body.pairings)===Array?req.body.pairings.join(', '):req.body.pairings).split(', ')
+    Flavor.create(req.body, (err, flavor) => {
+        if (err) {
+            console.log(`error ${err}`)
+            res.send(err)
+        } else {
+            res.redirect('/flavors')
+        }
+    })
+})
 
 // destroy
 // router.delete('/:id', (req, res) => {
