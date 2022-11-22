@@ -1,11 +1,14 @@
 <%- include('./partials/header.ejs') %>
-<h1><%=flavor.name%></h1>
-<h3>Pairings</h3>
-<ul>
-    <% for (let i in flavor.pairings) { %>
-        <li>
-            <%=flavor.pairings[i]%>
-        </li>
-    <% } %>
-</ul>
+    <h1><%=flavor.name%></h1>
+    <h3>Pairings</h3>
+    <ul>
+        <% for (let i in flavor.pairings) { %>
+            <li>
+                <%=flavor.pairings[i]%>
+            </li>
+        <% } %>
+    </ul>
+    <form action="flavors/<%=flavor.name%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+    </form>
 <%- include('./partials/footer.ejs') %>
