@@ -34,12 +34,18 @@ router.post('/', (req, res) => {
     })
 })
 
-// destroy
-// router.delete('/:id', (req, res) => {
-//     res.send
-// })
+// destroy flavor
+router.delete('/:name', (req, res) => {
+    Flavor.findOneAndRemove({name: req.params.name}, (err, data) => {
+        res.redirect('/flavors')
+    })
+})
+
+// destroy flavor pairing
+
 
 // edit
+// router.get('/')
 
 // update
 
