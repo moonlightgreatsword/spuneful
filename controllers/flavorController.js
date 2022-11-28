@@ -44,13 +44,17 @@ router.delete('/:name', (req, res) => {
 // destroy flavor pairing
 router.put('/:name/:pair', (req, res) => {
     Flavor.findOneAndUpdate( { name: req.params.name }, { $pull: { pairings: { $in: req.params.pair } } }, { new:true }, (err, updatedModel) => {
-        console.log(updatedModel)
         res.redirect(`/flavors/${req.params.name}`)
     } )
 })
 
-// edit
-// router.get('/')
+// update
+router.put('/:name/', (req, res) => {
+    req.body.pairings = (typeof(req.body.pairings)===Array?req.body.pairings.join(', '):req.body.pairings).split(', ')
+    Flavor.findOneAndUpdate( { name: req.params.name }, { $push: { pairings: { $each: req.body.pairings } } }, { new:true }, (err, updatedModel) => {
+        res.redirect(`/flavors/${req.params.name}`)
+    } )
+})
 
 // update
 
