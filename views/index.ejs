@@ -1,10 +1,12 @@
 <%- include('./partials/header.ejs') %>
-    <h1>Flavors</h1>
-    <ul>
-        <% for (let i in flavors) { %>
-            <li>
-                <a href="/flavors/<%=flavors[i].name%>"><%=flavors[i].name%></a>
-            </li>
-        <% } %>
-    </ul>
+    <main class="leftalign">
+        <h1>Flavors</h1>
+        <ul>
+            <% for (let i in flavors) { %>
+                <li>
+                    <a href="/flavors/<%=flavors[i].name%>"><%=flavors[i].name%></a>
+                </li>
+            <% } %>
+        </ul>
+    </main>
 <%- include('./partials/footer.ejs') %>

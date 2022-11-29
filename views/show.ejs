@@ -1,22 +1,30 @@
 <%- include('./partials/header.ejs') %>
-    <h1><%=flavor.name%></h1>
-    <h3>Pairings</h3>
-    <ul>
-        <% for (let i in flavor.pairings) { %>
-            <li>
-                <%=flavor.pairings[i]%>
-                <form action="/flavors/<%=flavor.name%>/<%=flavor.pairings[i]%>?_method=PUT" method="POST">
-                    <input type="submit" value="x" />
+    <main class="centeralign">
+        <h1><%=flavor.name%></h1>
+        <div id="showcols">
+            <div id="pairings">
+                <h3>Pairings</h3>
+                <ul>
+                    <% for (let i in flavor.pairings) { %>
+                        <li>
+                            <a href="/flavors/<%=flavor.pairings[i]%>"><%=flavor.pairings[i]%></a>
+                            <form action="/flavors/<%=flavor.name%>/<%=flavor.pairings[i]%>?_method=PUT" method="POST">
+                                <input type="submit" value="x" />
+                            </form>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div id="newpairing">
+                <form action="/flavors/<%=flavor.name%>?_method=PUT" method="POST">
+                    <label for="pairings"><h3>Add new pairings</h3></label>
+                    <input type="textarea" name="pairings" id="pairings" placeholder="Chocolate, Lime, Rum, Anise" />
+                    <input type="submit" value="Add Pairing(s)" />
                 </form>
-            </li>
-        <% } %>
-    </ul>
-    <form action="/flavors/<%=flavor.name%>?_method=PUT" method="POST">
-        <label for="pairings">Add new pairings</label>
-        <input type="textarea" name="pairings" id="pairings" placeholder="Chocolate, Lime, Rum, Anise" />
-        <input type="submit" value="Add Pairing(s)" />
-    </form>
-    <form action="/flavors/<%=flavor.name%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
-    </form>
+            </div>
+        </div>
+        <form action="/flavors/<%=flavor.name%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+        </form>
+    </main>
 <%- include('./partials/footer.ejs') %>
