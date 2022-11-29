@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Merriweather+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Martel&family=Merriweather+Sans&display=swap');
 
 html,
 body {
@@ -92,6 +92,10 @@ main {
     width: 30%;
 }
 
+li {
+    font-family: 'Martel', serif;
+}
+
 #showcols ul {
     width: 100%;
 }
@@ -154,7 +158,7 @@ li input[type=submit]:hover {
     color: #97C8EB;
 }
 
-#pairings {
+#pairingscol {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -168,20 +172,30 @@ li input[type=submit]:hover {
     justify-content: flex-start;
 }
 
-input[type=textarea] {
-    width: 100%;
-    height: 150px;
-    padding: 10px 20px;
-    border: 2px solid #093A3E;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    font-size: 1em;
-    margin: 10px 0;
+label {
+    font-family: 'Martel', serif;
+    font-weight: bold;
 }
 
 input[type=text] {
     border: 2px solid #093A3E;
     border-radius: 5px;
     background-color: #f8f8f8;
+    font-family: 'Martel', serif;
+    font-size: 1em;
     margin: 10px 0;
+}
+
+input[type=textarea] {
+    text-align: start !important;
+    width: 100%;
+    height: 150px;
+    border: 2px solid #093A3E;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-family: 'Martel', serif;
+    font-size: 1em;
+    margin: 10px 0;
+    padding: 10px;
+    vertical-align: top;
 }
