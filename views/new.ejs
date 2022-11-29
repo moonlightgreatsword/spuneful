@@ -1,11 +1,11 @@
 <%- include('./partials/header.ejs') %>
 <main class="leftalign">
     <h1>Add a New Flavor</h1>
-    <form action="/flavors" method="POST">
+    <form action="/flavors" method="POST" id="newflavorform">
         <label for="name">Name</label><br>
         <input type="text" name="name" id="name" placeholder="Mint" /><br>
         <label for="pairings">Pairings</label><br>
-        <input type="textarea" name="pairings" id="pairings" placeholder="Chocolate, Lime, Rum, Anise" />
+        <textarea form="newflavorform" id="pairings" name="pairings" placeholder="Chocolate, Lime, Rum, Anise" rows="4" cols="35" wrap="hard"></textarea>
         <input type="submit" value="Add Flavor" />
     </form>
 </main>

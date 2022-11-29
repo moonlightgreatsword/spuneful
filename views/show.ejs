@@ -16,9 +16,9 @@
                 </ul>
             </div>
             <div id="newpairing">
-                <form action="/flavors/<%=flavor.name%>?_method=PUT" method="POST">
+                <form action="/flavors/<%=flavor.name%>?_method=PUT" method="POST" id="newpairingform">
                     <label for="pairings"><h3>Add new pairings</h3></label>
-                    <input type="textarea" name="pairings" id="pairings" placeholder="Chocolate, Lime, Rum, Anise" />
+                    <textarea form="newpairingform" id="pairings" name="pairings" placeholder="Chocolate, Lime, Rum, Anise" rows="4" cols="35" wrap="hard"></textarea>
                     <input type="submit" value="Add Pairing(s)" />
                 </form>
             </div>
